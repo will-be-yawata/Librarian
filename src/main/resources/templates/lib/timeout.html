@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/static/js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="/static/layui/css/layui.css"/>
+    <script src="/static/layui/layui.js"></script>
+    <script type="text/javascript" src="/static/js/lib/timeout.js?v=1"></script>
+</head>
+<body>
+<script type="text/html" id="timeoutlistBar">
+    <a class="layui-btn layui-btn-sm" lay-event="send"><i class="layui-icon layui-icon-dialogue">提醒ta</i></a>
+</script>
+<table class="layui-hide" id="timeoutlist" lay-filter="timeout"></table>
+</body>
+</html>

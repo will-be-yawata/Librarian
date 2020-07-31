@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/static/js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="/static/layui/css/layui.css"/>
+    <script src="/static/layui/layui.js"></script>
+    <script type="text/javascript" src="/static/js/stu/borrowStatus.js?v=0"></script>
+</head>
+<body>
+<script type="text/html" id="borrowlistBar">
+    <a class="layui-btn layui-btn-warm" lay-event="send">处理中</a>
+    <a class="layui-btn" lay-event="send">已通过</a>
+    <a class="layui-btn layui-btn-danger" lay-event="del">未通过</a>
+</script>
+<table class="layui-hide" id="borrowlist" lay-filter="borrows"></table>
+</body>
+</html>

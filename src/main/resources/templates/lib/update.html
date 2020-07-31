@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改图书</title>
+    <script type="text/javascript" src="/static/js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="/static/layui/css/layui.css"/>
+    <script src="/static/layui/layui.js"></script>
+    <script type="text/javascript" src="/static/js/lib/update.js"></script>
+</head>
+<body>
+<form class="layui-form" action="/lib/updateBook" method="post">
+    <div class="layui-form-item">
+        <label class="layui-form-label">ID</label>
+        <div class="layui-input-block">
+            <input type="text" name="id" lay-verify="id" autocomplete="off" class="layui-input" th:value="${book.id}" readonly/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">ISBN</label>
+        <div class="layui-input-block">
+            <input type="text" name="ISBN" lay-verify="ISBN" autocomplete="off" placeholder="请输入ISBN" class="layui-input" th:value="${book.ISBN}"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">书名</label>
+        <div class="layui-input-block">
+            <input type="text" name="name" lay-verify="name" autocomplete="off" placeholder="请输入书名" class="layui-input" th:value="${book.name}"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">价格</label>
+        <div class="layui-input-block">
+            <input type="text" name="price" lay-verify="price" autocomplete="off" placeholder="请输入价格" class="layui-input" th:value="${book.price}"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">作者</label>
+        <div class="layui-input-block">
+            <input type="text" name="author" lay-verify="author" autocomplete="off" placeholder="请输入作者" class="layui-input" th:value="${book.author}"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出版社</label>
+        <div class="layui-input-block">
+            <input type="text" name="published" lay-verify="published" autocomplete="off" placeholder="请输入出版社" class="layui-input" th:value="${book.published}"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">分类</label>
+        <div class="layui-input-block">
+            <select name="category_id" lay-filter="category_id">
+                <option value="">不分类</option>
+                <option th:each="c:${categorys}" th:value="${c.id}" th:text="${c.name}" th:selected="${c.id eq book.category.id}"></option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图片</label>
+        <div class="layui-input-block">
+            <input type="hidden" name="img" lay-verify="img" autocomplete="off" class="layui-input" th:value="${book.img}"/>
+            <div class="layui-upload">
+                <div class="layui-upload-list">
+                    <img class="layui-upload-img" id="bookImg" th:src="@{/static/images/{img}(img=${book.img})}" width="200px" height="200px">
+                    <p id="uploadFail"></p>
+                </div>
+                <button type="button" class="layui-btn" id="uploadImg">上传图片</button>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="submit">确认修改</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

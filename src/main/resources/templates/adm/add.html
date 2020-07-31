@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改图书</title>
+    <script type="text/javascript" src="/static/js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="/static/layui/css/layui.css"/>
+    <script src="/static/layui/layui.js"></script>
+    <script type="text/javascript" src="/static/js/adm/add.js"></script>
+</head>
+<body>
+<form class="layui-form layui-form-pane" action="/adm/add" method="post">
+    <div class="layui-form-item" pane>
+        <label class="layui-form-label">工号</label>
+        <div class="layui-input-block">
+            <input type="text" name="num" lay-verify="num" autocomplete="off" placeholder="请输入工号" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item" pane>
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="name" lay-verify="name" autocomplete="off" placeholder="请输入姓名" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item" pane>
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-block">
+            <input type="password" name="password" lay-verify="password" autocomplete="off" value="123456" placeholder="请输入密码" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">启用/禁用</label>
+        <div class="layui-input-block">
+            <input type="checkbox" checked name="status" lay-skin="switch" lay-text="ON|OFF" value="1">
+        </div>
+    </div>
+    <div class="layui-form-item" pane>
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="submit">添加</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
